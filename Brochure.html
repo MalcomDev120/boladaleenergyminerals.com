@@ -1,0 +1,300 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bola Dala Energy Brochure</title>
+
+<style>
+#brochure-app *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Tahoma,sans-serif;
+}
+
+#brochure-app{
+    min-height:100vh;
+    color:#fff;
+    background:url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+    background-size:cover;
+    position:relative;
+}
+
+#brochure-app::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(5, 10, 25, 0.108);
+    z-index:0;
+}
+
+/* TOP BAR */
+.top-bar{
+    position:relative;
+    z-index:3;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
+
+.top-bar a{
+    background:#ffd900aa;
+    padding:10px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    color:#0000008e;
+    font-weight:bold;
+}
+
+.top-bar button{
+    background:#ffffff97;
+    border:none;
+    padding:10px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* BROCHURE */
+#brochure-app .brochure{
+    position:relative;
+    z-index:2;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+}
+
+.page{
+    display:none;
+    background:rgba(255, 255, 255, 0.125);
+    padding:40px;
+    border-radius:16px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+}
+
+.page.active{
+    display:block;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero h1{
+    font-size:2.7rem;
+    color:#ffd900a3;
+}
+
+.hero p{
+    margin-top:10px;
+    opacity:0.85;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    background:#ffffffba;
+    color:#111111a0;
+    padding:16px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+/* NAV */
+.nav{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+}
+
+button{
+    background:#ffd900a8;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:20px;
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div id="brochure-app">
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <a href="index.html">⬅ <span data-i18n="back">Back to Main Site</span></a>
+    <button onclick="toggleLanguage()">🌍 EN / FR</button>
+</div>
+
+<div class="brochure">
+
+<!-- PAGE 1 -->
+<div class="page active">
+
+    <div class="hero">
+        <h1 data-i18n="title">Bola Dala Energy &  Minerals</h1>
+        <p data-i18n="subtitle">Powering a Sustainable Future with Smart Energy Solutions</p>
+    </div>
+
+    <h2 data-i18n="welcomeTitle">Welcome</h2>
+    <p data-i18n="welcomeText">We deliver clean, renewable and reliable energy solutions worldwide.</p>
+
+    <div class="nav">
+        <span></span>
+        <button onclick="nextPage()">Next ➜</button>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+    <h2 data-i18n="services">Our Services</h2>
+
+    <div class="grid">
+        <div class="card">⚡ Solar Energy Systems</div>
+        <div class="card">🌬️ Wind Power Solutions</div>
+        <div class="card">🔋 Battery Storage</div>
+        <div class="card">🏭 Industrial Supply</div>
+
+        <div class="card">🥇 Gold Services</div>
+        <div class="card">🚗 Automotive Solutions</div>
+        <div class="card">⛏️ Mineral Services</div>
+    </div>
+
+    <div class="nav">
+        <button onclick="prevPage()">⬅ Prev</button>
+        <button onclick="nextPage()">Next ➜</button>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+    <h2 data-i18n="contact">Contact Us</h2>
+
+    <p data-i18n="contactText">Let’s build sustainable energy solutions together.</p>
+
+    <a class="card" style="display:inline-block;background:#25D366;color:#fff;text-decoration:none;margin-top:15px;">
+        💬 WhatsApp
+    </a>
+
+    <div class="nav">
+        <button onclick="prevPage()">⬅ Prev</button>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 Bola Dala Energy &  Minerals
+</div>
+
+</div>
+</div>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+
+const translations = {
+    en:{
+        back:"Back to Main Site",
+        title:"Bola Dala Energy",
+        subtitle:"Powering a Sustainable Future with Smart Energy Solutions",
+        welcomeTitle:"Welcome",
+        welcomeText:"We deliver clean, renewable and reliable energy solutions worldwide.",
+        services:"Our Services",
+        contact:"Contact Us",
+        contactText:"Let’s build sustainable energy solutions together."
+    },
+    fr:{
+        back:"Retour au site principal",
+        title:"Bola Dala Énergie",
+        subtitle:"Alimenter un avenir durable avec des solutions énergétiques intelligentes",
+        welcomeTitle:"Bienvenue",
+        welcomeText:"Nous fournissons des solutions énergétiques propres et fiables dans le monde entier.",
+        services:"Nos Services",
+        contact:"Contactez-nous",
+        contactText:"Construisons ensemble des solutions énergétiques durables."
+    }
+};
+
+/* AUTO LANGUAGE */
+function getDefaultLang(){
+    const saved = localStorage.getItem("lang");
+    if(saved) return saved;
+    return navigator.language.startsWith("fr") ? "fr" : "en";
+}
+
+let language = getDefaultLang();
+
+/* APPLY TRANSLATION */
+function applyLanguage(){
+    document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        el.innerText = translations[language][key];
+    });
+
+    localStorage.setItem("lang", language);
+}
+
+/* LANGUAGE TOGGLE */
+function toggleLanguage(){
+    language = (language === "en") ? "fr" : "en";
+    applyLanguage();
+}
+
+/* PAGE SYSTEM */
+function showPage(i){
+    pages.forEach((p,idx)=>{
+        p.classList.toggle("active", idx === i);
+    });
+    currentPage = i;
+}
+
+function nextPage(){
+    if(currentPage < pages.length-1) showPage(currentPage+1);
+}
+
+function prevPage(){
+    if(currentPage > 0) showPage(currentPage-1);
+}
+
+/* SWIPE */
+let startX=0;
+document.addEventListener("touchstart",e=>{
+    startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchend",e=>{
+    let diff = startX - e.changedTouches[0].clientX;
+    if(diff > 50) nextPage();
+    if(diff < -50) prevPage();
+});
+
+/* INIT */
+applyLanguage();
+showPage(0);
+</script>
+
+</body>
+</html>

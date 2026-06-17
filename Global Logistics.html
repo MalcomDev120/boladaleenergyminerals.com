@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bola Dale Energy and Minerals Company</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+:root{
+  --gold:#D4AF37;
+  --dark:#000;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:0;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  background:url('https://images.unsplash.com/photo-1611599537845-1c7f2c0a6d3b?auto=format&fit=crop&w=2000&q=80') center/cover;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.65);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:20px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:4.5rem;
+  color:var(--gold);
+  text-shadow:0 0 30px rgba(212,175,55,.4);
+}
+
+.hero p{
+  font-size:1.2rem;
+  opacity:.9;
+  margin-top:15px;
+  line-height:1.7;
+}
+
+.hero-buttons{
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 35px;
+  border-radius:50px;
+  margin:10px;
+  text-decoration:none;
+  transition:.4s;
+  font-weight:600;
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:#000;
+}
+
+.btn-primary:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(212,175,55,.6);
+}
+
+.btn-secondary{
+  border:2px solid var(--gold);
+  color:#fff;
+}
+
+.btn-secondary:hover{
+  background:var(--gold);
+  color:#000;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  padding:80px 8%;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.stats h2{
+  color:var(--gold);
+  font-size:2rem;
+}
+
+/* SERVICES */
+.services-wrapper{
+  display:flex;
+  gap:40px;
+  padding:80px 8%;
+  align-items:flex-start;
+  position:relative;
+  z-index:2;
+}
+
+.service-texts{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.service-box{
+  background:rgba(255,255,255,.03);
+  border-left:4px solid var(--gold);
+  padding:20px;
+  border-radius:10px;
+  transition:.4s;
+}
+
+.service-box:hover{
+  transform:translateX(10px);
+  background:rgba(212,175,55,.08);
+}
+
+.service-box h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.service-box p{
+  opacity:.85;
+  line-height:1.6;
+}
+
+.products-side{
+  flex:1;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#111;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.card div{
+  padding:20px;
+}
+
+/* CEO */
+.ceo{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  padding:80px 8%;
+  position:relative;
+  z-index:2;
+}
+
+.ceo img{
+  width:100%;
+  max-width:400px;
+  border-radius:12px;
+}
+
+/* MAP */
+.map{
+  padding:80px 8%;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.map-box{
+  margin-top:30px;
+  padding:40px;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:12px;
+}
+
+/* TESTIMONIAL */
+.testimonial{
+  padding:80px 8%;
+  text-align:center;
+  font-style:italic;
+  font-size:1.1rem;
+  position:relative;
+  z-index:2;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+section{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+  .services-wrapper{
+    flex-direction:column;
+  }
+
+  .ceo{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:3rem;
+  }
+
+  .stats{
+    flex-direction:column;
+    gap:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <h1>Bola Dale Energy Minerals Company</h1>
+
+    <p>
+      Bola Da Energy Minerals Company is an international logistics and trading organization headquartered in France, operating within the global energy and mineral industries. The company focuses on the efficient sourcing, management, and global distribution of energy products and mineral resources.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#products">Explore Services</a>
+      <a class="btn btn-secondary" href="index.html">Contact Us</a>
+    </div>
+    
+    <div class="hero-contact" style="margin-top:30px;">
+
+      <p><strong>Telephone:</strong> +33 7 53 83 27 99</p>
+      <p><strong>Email:</strong> boladaleenergy@yahoo.fr</p>
+    
+      <div style="margin-top:20px;">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fas fa-home"></i> Back to Main Website
+        </a>
+      </div>
+    
+    </div>
+</section>
+
+<section class="stats">
+  <div>
+    <h2>15+</h2>
+    <p>Years Experience</p>
+  </div>
+
+  <div>
+    <h2>30+</h2>
+    <p>Countries</p>
+  </div>
+
+  <div>
+    <h2>Global</h2>
+    <p>Supply Network</p>
+  </div>
+</section>
+
+<section id="products">
+
+  <div class="services-wrapper">
+
+    <div class="service-texts">
+
+      <div class="service-box">
+        <h3>Global Energy Trading</h3>
+        <p>We facilitate reliable international trading solutions for energy products, connecting suppliers and buyers across major global markets.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Mineral Resource Management</h3>
+        <p>Our company specializes in sourcing, handling, and distributing strategic mineral resources while maintaining international quality standards.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Supply Chain Optimization</h3>
+        <p>We streamline logistics operations to ensure efficient movement of products from origin to destination worldwide.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>International Partnerships</h3>
+        <p>Through strong relationships with industry leaders, we create sustainable opportunities for long-term business growth.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Compliance & Risk Management</h3>
+        <p>Every operation is conducted with strict adherence to international trade regulations, safety requirements, and environmental standards.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Worldwide Distribution Network</h3>
+        <p>Our extensive logistics network enables seamless delivery across Europe, Africa, Asia, the Middle East, and other strategic markets.</p>
+      </div>
+
+    </div>
+
+    <div class="products-side">
+
+      <h2 style="margin-bottom:30px;color:var(--gold);">
+        Core Operations
+      </h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <img src="chains .jpg" alt="Energy Trading">
+          <div>
+            <h3>Energy Trading</h3>
+            <p>Global Distribution</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="MineralResources.jpg" alt="Mineral Resources">
+          <div>
+            <h3>Mineral Resources</h3>
+            <p>Strategic Sourcing</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="logistics1.jpg" alt="Logistics">
+          <div>
+            <h3>Logistics</h3>
+            <p>International Supply Chain</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="ceo">
+
+  <img src="10.jpeg" alt="Founder & Managing Director">
+
+  <div>
+    <h2 style="color:var(--gold);font-size:2rem;">
+      Executive Leadership
+    </h2>
+    <h4>CO.CEO & Managing Director</h4>
+    <h4>MR.NSUBUGA  M.M </h4>
+
+    <p style="max-width:500px;opacity:.8;margin-top:15px;">
+      Leading global operations in energy logistics and mineral trading with a focus on efficiency, compliance, and long-term international partnerships.
+    </p>
+  </div>
+
+</section>
+
+<section class="map">
+  <h2 style="color:var(--gold);">
+    Global Operations Network
+  </h2>
+
+  <div class="map-box">
+    <p>
+      France • Europe • Africa • Middle East • Asia • Global Trade Routes
+    </p>
+  </div>
+</section>
+
+<section class="testimonial">
+  <p>★★★★★</p>
+  <br>
+  <p>
+    "A highly reliable partner in international energy and mineral logistics."
+  </p>
+  <br>
+  <p>— Global Trade Partner</p>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 600;
+
+    if(top > offset){
+      sec.classList.add("show");
+    }
+  });
+});
+
+window.addEventListener("load", () => {
+  document.querySelector(".hero").classList.add("show");
+});
+</script>
+
+</body>
+</html>
+

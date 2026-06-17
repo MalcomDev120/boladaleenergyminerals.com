@@ -1,0 +1,1067 @@
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bola Dale Energy & Minerals | Supply Chain Financing</title>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+:root{
+
+    --primary:#102f56;
+
+    --secondary:#d4af37;
+
+    --accent:#1f6feb;
+
+    --light:#f5f7fa;
+
+    --dark:#111827;
+
+    --white:#ffffff;
+
+}
+
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+body{
+
+    background:#fff;
+
+    color:#333;
+
+    line-height:1.6;
+
+}
+
+
+
+header{
+
+    background:linear-gradient(rgba(12,35,64,.85),rgba(12,35,64,.85)),
+
+    url('https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1600&q=80');
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
+    min-height:100vh;
+
+}
+
+
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 8%;
+
+}
+
+
+
+.logo{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    color:var(--secondary);
+
+}
+
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-links a:hover{
+
+    color:var(--secondary);
+
+}
+
+
+
+.hero{
+
+    padding:120px 8%;
+
+    max-width:900px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.hero p{
+
+    font-size:1.2rem;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    background:var(--secondary);
+
+    color:#000;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+section{
+
+    padding:90px 8%;
+
+}
+
+
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+
+.section-title h2{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+}
+
+
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+.stat-box{
+
+    background:white;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.stat-box h3{
+
+    color:var(--secondary);
+
+    font-size:3rem;
+
+}
+
+
+
+.services{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+
+
+.process{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.step{
+
+    text-align:center;
+
+}
+
+
+
+.step-number{
+
+    width:70px;
+
+    height:70px;
+
+    background:var(--secondary);
+
+    color:black;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.calculator{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:15px;
+
+    padding:40px;
+
+}
+
+
+
+.calc-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:5px;
+
+}
+
+
+
+button{
+
+    padding:12px 20px;
+
+    background:var(--secondary);
+
+    border:none;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    border-radius:5px;
+
+}
+
+
+
+.result{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+}
+
+
+
+.contact{
+
+    background:#f8fafc;
+
+}
+
+
+
+.contact-form{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+
+
+.contact-form input,
+
+.contact-form textarea{
+
+    width:100%;
+
+    margin-bottom:15px;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+}
+
+
+
+textarea{
+
+    min-height:140px;
+
+}
+
+
+
+footer{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+
+@media(max-width:768px){
+
+
+
+.hero h1{
+
+    font-size:2.5rem;
+
+}
+
+
+
+.calc-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.nav-links{
+
+    display:none;
+
+}
+
+
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<header>
+
+
+
+<nav class="navbar">
+
+<div class="logo">Bola Dale Energy  Minerals Company</div>
+
+
+
+<div class="nav-links">
+
+  <a href="index.html">Home</a>
+
+  <a href="Solutions.html">Solutions</a>
+
+  <a href="mailto:boladaleenergyminerals@yahoo.fr">Contact</a>
+
+</div>
+
+
+
+<p>
+
+  Tel: <a href="tel:+33753832799">+33 7 53 83 27 99</a>
+
+</p>
+
+</nav>
+
+
+
+<div class="hero">
+
+<h1>Supply Chain Financing Solutions</h1>
+
+
+
+<p>
+
+Accelerating growth across the energy, mining, commodity, and
+
+industrial sectors through flexible supply chain financing,
+
+working capital optimization, and supplier payment solutions.
+
+</p>
+
+
+
+<a href="#contact" class="btn">Request Financing</a>
+
+</div>
+
+
+
+</header>
+
+
+
+<section>
+
+
+
+<div class="section-title">
+
+<h2>Our Impact</h2>
+
+</div>
+
+
+
+<div class="stats">
+
+
+
+<div class="stat-box">
+
+<h3 class="counter" data-target="500">0</h3>
+
+<p>Million USD Financed</p>
+
+</div>
+
+
+
+<div class="stat-box">
+
+<h3 class="counter" data-target="120">0</h3>
+
+<p>Global Suppliers Supported</p>
+
+</div>
+
+
+
+<div class="stat-box">
+
+<h3 class="counter" data-target="35">0</h3>
+
+<p>Countries Served</p>
+
+</div>
+
+
+
+<div class="stat-box">
+
+<h3 class="counter" data-target="98">0</h3>
+
+<p>% Client Satisfaction</p>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<section style="background:#f5f7fa;">
+
+
+
+<div class="section-title">
+
+<h2>Financing Solutions</h2>
+
+</div>
+
+
+
+<div class="services">
+
+
+
+<div class="card">
+
+<h3>Supplier Financing</h3>
+
+<p>
+
+Enable suppliers to receive early payments while maintaining
+
+buyer cash flow flexibility.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Purchase Order Financing</h3>
+
+<p>
+
+Secure funding for large procurement contracts and commodity transactions.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Inventory Financing</h3>
+
+<p>
+
+Unlock working capital through inventory-backed funding structures.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Trade Finance</h3>
+
+<p>
+
+Letters of credit, guarantees, and cross-border transaction support.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<section>
+
+
+
+<div class="section-title">
+
+<h2>How It Works</h2>
+
+</div>
+
+
+
+<div class="process">
+
+
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Application</h3>
+
+<p>Submit supplier or project funding request.</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Assessment</h3>
+
+<p>Financial and operational due diligence review.</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Approval</h3>
+
+<p>Customized financing structure approved.</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Funding</h3>
+
+<p>Rapid disbursement and supplier payment execution.</p>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<section>
+
+
+
+<div class="section-title">
+
+<h2>Financing Calculator</h2>
+
+</div>
+
+
+
+<div class="calculator">
+
+
+
+<div class="calc-grid">
+
+
+
+<div>
+
+<label>Invoice Value (USD)</label>
+
+<input type="number" id="invoice" placeholder="100000">
+
+</div>
+
+
+
+<div>
+
+<label>Advance Rate (%)</label>
+
+<input type="number" id="rate" placeholder="80">
+
+</div>
+
+
+
+</div>
+
+
+
+<br>
+
+
+
+<button onclick="calculateFunding()">Calculate Funding</button>
+
+
+
+<div class="result" id="result">
+
+Estimated Funding: $0
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<section id="contact" class="contact">
+
+
+
+<div class="section-title">
+
+<h2>Contact Our Financing Team</h2>
+
+</div>
+
+
+
+<div class="contact-form">
+
+
+
+<input type="text" placeholder="Company Name">
+
+
+
+<input type="text" placeholder="Contact Person">
+
+
+
+<input type="email" placeholder="Email Address">
+
+
+
+<textarea placeholder="Describe your financing requirements"></textarea>
+
+
+
+<button>Submit Request</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+<footer>
+
+
+
+<h3>Bola Dale Energy & Minerals</h3>
+
+<p>
+
+Strategic Supply Chain Financing for Global Energy,
+
+Mining & Commodity Markets.
+
+</p>
+
+
+
+<p style="margin-top:10px;">
+
+© 2026 Bola Dale Energy & Minerals. All Rights Reserved.
+
+</p>
+
+
+
+</footer>
+
+
+
+<script>
+
+
+
+// Counter Animation
+
+const counters = document.querySelectorAll('.counter');
+
+
+
+counters.forEach(counter => {
+
+
+
+const updateCounter = () => {
+
+
+
+const target = +counter.getAttribute('data-target');
+
+const count = +counter.innerText;
+
+
+
+const increment = target / 100;
+
+
+
+if(count < target){
+
+counter.innerText = Math.ceil(count + increment);
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText = target;
+
+}
+
+
+
+};
+
+
+
+updateCounter();
+
+
+
+});
+
+
+
+// Financing Calculator
+
+function calculateFunding(){
+
+
+
+let invoice = parseFloat(document.getElementById('invoice').value);
+
+let rate = parseFloat(document.getElementById('rate').value);
+
+
+
+if(isNaN(invoice) || isNaN(rate)){
+
+alert("Please enter valid values");
+
+return;
+
+}
+
+
+
+let funding = invoice * (rate/100);
+
+
+
+document.getElementById('result').innerHTML =
+
+`Estimated Funding: <strong>$${funding.toLocaleString()}</strong>`;
+
+
+
+}
+
+
+
+// Smooth Scroll
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+
+
+anchor.addEventListener('click', function(e){
+
+
+
+e.preventDefault();
+
+
+
+document.querySelector(this.getAttribute('href'))
+
+.scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+
+
+});
+
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

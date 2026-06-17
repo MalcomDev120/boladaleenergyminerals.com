@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bola Dale Energy Minerals Company</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root{
+    --primary:#D4AF37;
+    --dark:#0f172a;
+    --dark2:#1e293b;
+    --light:#f8fafc;
+    --text:#334155;
+    --white:#ffffff;
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.8;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    padding:90px 0;
+}
+
+.section h2{
+    text-align:center;
+    color:var(--dark);
+    margin-bottom:25px;
+    font-size:2.4rem;
+    position:relative;
+}
+
+.section h2::after{
+    content:'';
+    width:90px;
+    height:4px;
+    background:var(--primary);
+    display:block;
+    margin:10px auto;
+    border-radius:50px;
+}
+
+p{
+    margin-bottom:20px;
+}
+
+/* Header */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+}
+
+.logo{
+    color:#fff;
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.menu-btn{
+    display:none;
+    color:#fff;
+    font-size:1.6rem;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(15,23,42,.75),rgba(15,23,42,.75)),
+    url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:120px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:3.8rem;
+    margin-bottom:20px;
+}
+
+.hero h2{
+    color:var(--primary);
+    margin-bottom:25px;
+    font-size:1.8rem;
+}
+
+.hero p{
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--primary);
+    color:#111;
+    padding:14px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Cards */
+
+.product-gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.4s;
+    text-align:center;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+.product-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product-card h3{
+    padding:20px 20px 10px;
+    color:var(--dark);
+}
+
+.product-card p{
+    padding:0 20px 25px;
+}
+
+.services .product-card{
+    padding:30px;
+}
+
+/* About */
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+/* Sources */
+
+.source-list{
+    max-width:700px;
+    margin:25px auto;
+    background:#f8fafc;
+    padding:25px;
+    border-radius:15px;
+}
+
+.source-list li{
+    margin:10px 0;
+}
+
+/* Services Grid */
+
+.service-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.service-box{
+    background:white;
+    text-align:center;
+    padding:40px 25px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:.4s;
+}
+
+.service-box:hover{
+    transform:translateY(-8px);
+}
+
+.service-box i{
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.service-box h3{
+    margin-bottom:15px;
+}
+
+/* Operations */
+
+.operations{
+    background:#f8fafc;
+}
+
+/* Footer */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer h3{
+    color:var(--primary);
+    margin-bottom:20px;
+    font-size:1.8rem;
+}
+
+footer div{
+    margin:12px 0;
+}
+
+footer i{
+    color:var(--primary);
+    margin-right:10px;
+}
+
+.footer-note{
+    margin-top:30px;
+    opacity:.7;
+}
+
+/* Scroll Button */
+
+.scrollTop{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:var(--primary);
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    color:#111;
+    font-size:20px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.scrollTop.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero h2{
+        font-size:1.3rem;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:-100%;
+        width:100%;
+        background:var(--dark);
+        flex-direction:column;
+        text-align:center;
+        padding:30px 0;
+        transition:.4s;
+    }
+
+    .nav-links.active{
+        left:0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            Bola Dale Energy <span>Minerals</span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#minerals">Minerals</a>
+            <a href="#sourcing">Sourcing</a>
+            <a href="#services">Services</a>
+            <a href="#mining">Operations</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Bola Dale Energy  Minerals Company</h1>
+
+        <h2>Global Mineral Procurement & Supply Solutions</h2>
+
+        <p>
+            Bola Dale Energy Minerals Company is a France-based mineral procurement and trading company specializing in sourcing premium-quality gold dust, diamonds, gemstones, and other valuable minerals from trusted and verified suppliers across Africa. Through transparency, reliability, and long-term partnerships, we deliver high-quality mineral products to clients worldwide.
+        </p>
+
+        <a href="#contact" class="btn">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<div class="container">
+
+<h2>About Bola Dale Energy Minerals Company</h2>
+
+<div class="about-content">
+
+<p>
+Bola Dale Energy Minerals Company is headquartered in France and operates an extensive procurement network across Africa. We specialize in the identification, sourcing, verification, procurement, and export of valuable mineral resources for international clients.
+</p>
+
+<p>
+Our mission is to bridge reliable African mineral suppliers with buyers around the world through ethical business practices, transparency, quality assurance, and dependable logistics.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MINERALS -->
+
+<section id="minerals" class="section">
+
+<div class="container">
+
+<h2>Minerals We Procure & Supply</h2>
+
+<div class="product-gallery">
+
+<div class="product-card">
+<img src="golddust.png" alt="Gold Dust">
+<h3>Gold Dust</h3>
+<p>
+High-purity gold dust sourced from trusted mining cooperatives and licensed suppliers across Africa.
+</p>
+<div class="product-card">
+    <img src="rough&polished diamonds.png" alt="Rough & Polished Diamonds">
+    <h3>Rough & Polished Diamonds</h3>
+</div>
+<p>
+Ethically sourced diamonds suitable for jewelry manufacturing and investment purposes.
+</p>
+</div>
+<div class="product-card">
+<img src="diamonds.png" alt="Gemstones">
+<h3>Precious Gemstones</h3>
+<p>
+Premium rubies, sapphires, and rare gemstones supplied to global buyers.
+</p>
+<p> We source and deliver premium-quality rubies, sapphires, and rare gemstones that are carefully selected for their beauty, value, and authenticity. Our commitment to excellence ensures that every gemstone meets the expectations of jewelers, collectors, manufacturers, and investors worldwide. </p>
+<p> That is why our clients are at the center of our business. We focus on delivering responsive communication, dependable service, and personalized support throughout every stage of the purchasing process. From inquiry to delivery, we strive to provide a seamless and professional experience. </p>
+</div>
+</div>
+
+<div style="text-align:center;margin-top:50px;">
+
+<h3>Gold Dust Procurement</h3>
+<br>
+
+<h3>24K Gold Nuggets & Gold Bars</h3>
+<br>
+
+<h3>Diamonds & Precious Gemstones</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOURCING -->
+
+<section id="sourcing" class="section">
+
+<div class="container">
+
+<h2>Reliable African Mineral Sources</h2>
+
+<div class="about-content">
+
+<p>
+We work closely with licensed miners, mining cooperatives, and certified exporters across several African countries to secure premium-quality mineral resources.
+</p>
+
+<p>
+Every procurement process undergoes strict verification procedures to ensure authenticity, quality, compliance, and traceability before shipment to our global clients.
+</p>
+
+<p>
+Our sourcing network includes trusted partners in:
+</p>
+
+</div>
+
+<ul class="source-list">
+<li>Democratic Republic of Congo (DRC)</li>
+<li>Uganda</li>
+<li>Kenya</li>
+<li>Tanzania</li>
+<li>Ghana</li>
+<li>South Africa</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="section services">
+
+<div class="container">
+
+<h2>Our Procurement Services</h2>
+
+<div class="service-list">
+
+<div class="service-box">
+<i class="fas fa-search-dollar fa-3x"></i>
+<h3>Mineral Procurement</h3>
+<p>Identification and acquisition of quality mineral products.</p>
+</div>
+
+<div class="service-box">
+<i class="fas fa-certificate fa-3x"></i>
+<h3>Quality Verification</h3>
+<p>Professional inspection and certification procedures.</p>
+</div>
+
+<div class="service-box">
+<i class="fas fa-shipping-fast fa-3x"></i>
+<h3>Global Delivery</h3>
+<p>Reliable export logistics and worldwide shipment services.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OPERATIONS -->
+
+<section id="mining" class="section operations">
+
+<div class="container">
+
+<h2>Field Procurement Operations</h2>
+
+<div class="about-content">
+
+<p>
+Our procurement teams regularly visit mining regions and supplier locations throughout Africa to verify mineral quality, production standards, and supplier credibility.
+</p>
+
+<p>
+This hands-on approach ensures that every shipment meets international requirements before reaching our customers.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <h3>Bola Dale Energy Minerals Company</h3>
+    
+    <div>
+    <i class="fas fa-envelope"></i>
+    boladaleenergyminerals@gmail.com
+    </div>
+    
+    <div>
+    <i class="fas fa-phone"></i>
+    +33 753832799
+    </div>
+    
+    <div>
+    <i class="fas fa-map-marker-alt"></i>
+    France Headquarters
+    </div>
+    
+    <div style="margin-top:25px;">
+        <a href="index.html" class="btn">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </div>
+    
+    <div class="footer-note">
+    © 2026 Bola Dale Energy Minerals Company. All Rights Reserved.
+    </div>
+    
+    </footer>
+
+<div class="scrollTop" id="scrollTop">
+<i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+
+// Mobile Menu
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Scroll To Top
+
+const scrollTopBtn = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 400){
+        scrollTopBtn.classList.add('active');
+    }else{
+        scrollTopBtn.classList.remove('active');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+});
+
+// Close Mobile Menu
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+</script>
+
+</body>
+</html>

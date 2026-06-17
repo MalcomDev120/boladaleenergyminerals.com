@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bola Dale Energy Trading</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f6f9;
+color:#222;
+}
+
+nav{
+background:#0b1f33;
+color:white;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-weight:bold;
+font-size:1.1rem;
+}
+
+.menu{
+display:flex;
+gap:10px;
+}
+
+.menu button{
+background:transparent;
+border:1px solid white;
+color:white;
+padding:8px 14px;
+cursor:pointer;
+border-radius:5px;
+transition:.3s;
+}
+
+.menu button:hover,
+.menu button.active{
+background:white;
+color:#0b1f33;
+}
+
+.hamburger{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+.page{
+display:none;
+opacity:0;
+transform:translateY(20px);
+transition:.4s ease;
+}
+
+.page.active{
+display:block;
+opacity:1;
+transform:translateY(0);
+}
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2400&q=80");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.65);
+}
+
+.hero-content{
+position:relative;
+max-width:700px;
+padding:20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.btn{
+background:#ffb703;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+display:inline-block;
+}
+
+.section{
+padding:80px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+text-align:center;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.service-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.service-card h3{
+margin-bottom:10px;
+color:#0b1f33;
+}
+
+.stats{
+background:#0b1f33;
+color:white;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+text-align:center;
+padding:60px 8%;
+}
+
+.stat h2,
+.counter{
+color:#ffb703;
+font-size:36px;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+align-items:center;
+}
+
+.about-grid img{
+width:100%;
+border-radius:12px;
+}
+
+.service-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.service-box{
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+transition:.3s;
+}
+
+.service-box:hover{
+transform:translateY(-6px);
+}
+
+.service-box img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+}
+
+.service-box h3{
+padding:18px;
+text-align:center;
+}
+
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+input,
+textarea{
+padding:12px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button.submit{
+background:#0b1f33;
+color:white;
+padding:12px;
+border:none;
+cursor:pointer;
+border-radius:6px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#0b1f33;
+color:white;
+}
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+flex-direction:column;
+background:#0b1f33;
+position:absolute;
+top:60px;
+right:8%;
+padding:10px;
+}
+
+.menu.show{
+display:flex;
+}
+
+.hamburger{
+display:block;
+color:white;
+}
+
+.hero h1{
+font-size:32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Bola Dale Energy Trading</div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+<button onclick="showPage('about',this)">About</button>
+    <button onclick="showPage('contact',this)">Contact</button>
+    <button onclick="toggleLanguage()" id="langBtn">FR</button>
+    
+    <button onclick="window.location.href='index.html'">Home</button>
+    </div>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="page active">
+
+<section class="hero">
+<div class="hero-content">
+<h1>Global Energy Trading Solutions</h1>
+<p>Reliable oil, gas, logistics and energy supply chain services worldwide.</p>
+<a href="#services" class="btn">Explore More</a>
+</div>
+</section>
+
+<section id="services" class="section">
+<div class="section-title"><h2>Our Services</h2></div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Oil Trading</h3>
+<p>Procurement and international trading of crude oil, diesel, gasoline, jet fuel and petroleum products.</p>
+</div>
+
+<div class="service-card">
+<h3>Natural Gas Solutions</h3>
+<p>Reliable sourcing, transportation and distribution of natural gas products.</p>
+</div>
+
+<div class="service-card">
+<h3>Global Logistics</h3>
+<p>End-to-end logistics management including shipping, storage and customs support.</p>
+</div>
+
+<div class="service-card">
+<h3>Supply Chain Management</h3>
+<p>Optimizing procurement, inventory and delivery processes.</p>
+</div>
+
+<div class="service-card">
+<h3>Energy Consulting</h3>
+<p>Market insights, risk management and trading advisory services.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>Operations</h2></div>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content"><h3>Crude Oil</h3></div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content"><h3>Logistics</h3></div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content"><h3>Refined Products</h3></div>
+</div>
+
+</div>
+</section>
+
+<section class="stats" id="stats">
+<div class="stat"><h2 class="counter" data-target="500">0</h2><p>Clients</p></div>
+<div class="stat"><h2 class="counter" data-target="98">0</h2><p>% Satisfaction</p></div>
+<div class="stat"><h2 class="counter" data-target="35">0</h2><p>Countries</p></div>
+<div class="stat"><h2 class="counter" data-target="15">0</h2><p>Years</p></div>
+</section>
+
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+
+<section class="section">
+<div class="section-title"><h2>About Us</h2></div>
+
+<div class="about-grid">
+<div>
+<h3>Trusted Global Energy Partner</h3>
+<p>We deliver secure global oil and gas trading solutions with strong logistics networks.</p>
+</div>
+
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
+</div>
+</section>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+
+<section class="section">
+<div class="section-title"><h2>Contact Us</h2></div>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit" class="submit">Send Message</button>
+</form>
+
+</section>
+
+</div>
+
+<footer>© 2026 Global Energy Trading</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+function showPage(pageId,btn){
+
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById(pageId).classList.add("active");
+
+document.querySelectorAll(".menu button").forEach(b=>b.classList.remove("active"));
+if(btn) btn.classList.add("active");
+
+window.scrollTo({top:0,behavior:"smooth"});
+document.getElementById("menu").classList.remove("show");
+}
+
+/* COUNTERS */
+let started=false;
+const stats=document.querySelector("#stats");
+
+if(stats){
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting && !started){
+started=true;
+document.querySelectorAll(".counter").forEach(counter=>{
+const target=+counter.dataset.target;
+let count=0;
+const update=()=>{
+count+=target/100;
+if(count<target){
+counter.innerText=Math.ceil(count);
+requestAnimationFrame(update);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+}
+});
+});
+observer.observe(stats);
+}
+
+/* LANGUAGE SYSTEM */
+let currentLang="en";
+
+const t={
+en:{
+home:"Home",about:"About",contact:"Contact",
+heroTitle:"Global Energy Trading Solutions",
+heroText:"Reliable oil, gas, logistics and energy supply chain services worldwide.",
+explore:"Explore More",
+services:"Our Services",
+oil:"Oil Trading",
+oilText:"Procurement and international trading of crude oil, diesel, gasoline, jet fuel and petroleum products.",
+gas:"Natural Gas Solutions",
+gasText:"Reliable sourcing, transportation and distribution of natural gas products.",
+logistics:"Global Logistics",
+logisticsText:"End-to-end logistics management including shipping, storage and customs support.",
+supply:"Supply Chain Management",
+supplyText:"Optimizing procurement, inventory and delivery processes.",
+consulting:"Energy Consulting",
+consultingText:"Market insights, risk management and trading advisory services.",
+operations:"Operations",
+clients:"Clients",
+satisfaction:"Satisfaction",
+countries:"Countries",
+years:"Years",
+aboutTitle:"About Us",
+aboutText:"We deliver secure global oil and gas trading solutions with strong logistics networks.",
+contactTitle:"Contact Us",
+send:"Send Message"
+},
+
+fr:{
+home:"Accueil",about:"À propos",contact:"Contact",
+heroTitle:"Solutions mondiales de négoce d’énergie",
+heroText:"Services fiables de pétrole, gaz, logistique et chaîne d’approvisionnement énergétique dans le monde entier.",
+explore:"En savoir plus",
+services:"Nos services",
+oil:"Commerce du pétrole",
+oilText:"Achat et commerce international de pétrole brut, diesel, essence, kérosène et produits pétroliers.",
+gas:"Solutions de gaz naturel",
+gasText:"Approvisionnement, transport et distribution fiables de gaz naturel.",
+logistics:"Logistique mondiale",
+logisticsText:"Gestion logistique complète incluant transport, stockage et douane.",
+supply:"Gestion de la chaîne d’approvisionnement",
+supplyText:"Optimisation des achats, stocks et livraisons.",
+consulting:"Conseil en énergie",
+consultingText:"Analyse de marché, gestion des risques et conseil en trading.",
+operations:"Opérations",
+clients:"Clients",
+satisfaction:"Satisfaction",
+countries:"Pays",
+years:"Années",
+aboutTitle:"À propos de nous",
+aboutText:"Nous fournissons des solutions sécurisées de négoce pétrolier et gazier avec un réseau logistique solide.",
+contactTitle:"Contactez-nous",
+send:"Envoyer le message"
+}
+};
+
+function toggleLanguage(){
+currentLang=currentLang==="en"?"fr":"en";
+document.getElementById("langBtn").innerText=currentLang==="en"?"FR":"EN";
+
+/* NAV */
+document.querySelector(".menu button:nth-child(1)").innerText=t[currentLang].home;
+document.querySelector(".menu button:nth-child(2)").innerText=t[currentLang].about;
+document.querySelector(".menu button:nth-child(3)").innerText=t[currentLang].contact;
+
+/* HERO */
+document.querySelector(".hero h1").innerText=t[currentLang].heroTitle;
+document.querySelector(".hero p").innerText=t[currentLang].heroText;
+document.querySelector(".hero .btn").innerText=t[currentLang].explore;
+
+/* SECTIONS */
+document.querySelectorAll(".section-title h2")[0].innerText=t[currentLang].services;
+document.querySelectorAll(".section-title h2")[1].innerText=t[currentLang].operations;
+document.querySelectorAll(".section-title h2")[2].innerText=t[currentLang].aboutTitle;
+document.querySelectorAll(".section-title h2")[3].innerText=t[currentLang].contactTitle;
+
+/* SERVICE CARDS */
+const s=document.querySelectorAll(".service-card");
+s[0].querySelector("h3").innerText=t[currentLang].oil;
+s[0].querySelector("p").innerText=t[currentLang].oilText;
+
+s[1].querySelector("h3").innerText=t[currentLang].gas;
+s[1].querySelector("p").innerText=t[currentLang].gasText;
+
+s[2].querySelector("h3").innerText=t[currentLang].logistics;
+s[2].querySelector("p").innerText=t[currentLang].logisticsText;
+
+s[3].querySelector("h3").innerText=t[currentLang].supply;
+s[3].querySelector("p").innerText=t[currentLang].supplyText;
+
+s[4].querySelector("h3").innerText=t[currentLang].consulting;
+s[4].querySelector("p").innerText=t[currentLang].consultingText;
+
+/* STATS */
+document.querySelectorAll(".stat p")[0].innerText=t[currentLang].clients;
+document.querySelectorAll(".stat p")[1].innerText="% "+t[currentLang].satisfaction;
+document.querySelectorAll(".stat p")[2].innerText=t[currentLang].countries;
+document.querySelectorAll(".stat p")[3].innerText=t[currentLang].years;
+
+/* ABOUT + CONTACT */
+document.querySelector("#about p").innerText=t[currentLang].aboutText;
+document.querySelector("button.submit").innerText=t[currentLang].send;
+}
+
+</script>
+
+</body>
+</html>

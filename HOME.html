@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Oil & Gas Trading</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:url('images/oil-gas-hero.jpg') center center/cover no-repeat;
+    position:relative;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.65);
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.container{
+    max-width:900px;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.language-switch{
+    margin-bottom:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    max-width:700px;
+    margin:0 auto 35px;
+    color:#e5e5e5;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 32px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    border-radius:5px;
+    transition:all 0.3s ease;
+}
+
+.btn-gold{
+    background:#d4af37;
+    color:#000;
+}
+
+.btn-gold:hover{
+    background:#f1c84c;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid #d4af37;
+    color:#fff;
+}
+
+.btn-outline:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+@media (max-width:768px){
+    h1{
+        font-size:2.2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    .btn{
+        padding:12px 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="overlay">
+        <div class="container">
+
+            <!-- Language Selector -->
+            <div class="language-switch">
+                <button class="btn btn-gold" onclick="setLanguage('en')">
+                    English
+                </button>
+
+                <button class="btn btn-outline" onclick="setLanguage('fr')">
+                    Français
+                </button>
+            </div>
+
+            <h1 id="hero-title">
+                Global Oil & Gas Trading Excellence
+            </h1>
+
+            <p id="hero-text">
+                <p id="hero-text">
+                    Delivering reliable energy solutions, strategic partnerships, and worldwide petroleum trading services. Through our extensive network of trusted industry partners, logistics specialists, energy professionals, and local market representatives across Africa, Asia, and South America, we facilitate efficient and secure transactions for our clients worldwide.
+                
+                ```
+                Our team combines deep market knowledge with strong regional relationships to ensure every project is handled with professionalism, transparency, and attention to detail. From sourcing and procurement to transportation, compliance, and final delivery, we work closely with all stakeholders to provide seamless execution and dependable results.
+                
+                We are committed to building long-term partnerships based on trust, integrity, and performance, ensuring that every client receives the highest level of service and satisfaction at every stage of the trading process.
+                ```
+                
+                </p>
+                
+            </p>
+
+            <a href="#contact" class="btn btn-gold" id="hero-btn">
+                Request a Consultation
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<script>
+function setLanguage(lang) {
+
+    const title = document.getElementById("hero-title");
+    const text = document.getElementById("hero-text");
+    const button = document.getElementById("hero-btn");
+
+    if (lang === "fr") {
+
+        document.documentElement.lang = "fr";
+
+        title.textContent =
+            "Excellence Mondiale dans le Négoce du Pétrole et du Gaz";
+
+        text.textContent =
+            "Nous fournissons des solutions énergétiques fiables, des partenariats stratégiques et des services internationaux de négoce pétrolier afin de répondre aux besoins des marchés mondiaux.";
+
+        button.textContent =
+            "Demander une Consultation";
+
+    } else {
+
+        document.documentElement.lang = "en";
+
+        title.textContent =
+            "Global Oil & Gas Trading Excellence";
+
+        text.textContent =
+            "Delivering reliable energy solutions, strategic partnerships and worldwide petroleum trading services.";
+
+        button.textContent =
+            "Request a Consultation";
+    }
+}
+</script>
+
+</body>
+</html>

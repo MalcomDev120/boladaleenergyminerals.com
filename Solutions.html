@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bola Dale Energy  Minerals Company</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f6f8;
+    color:#333;
+    line-height:1.6;
+}
+
+/* Header */
+header{
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('images/hero-energy.jpg');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 30px;
+    background:#ffb400;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+/* Section Styling */
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:#0b3d91;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* Solution Cards */
+.solutions{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:#0b3d91;
+    margin-bottom:10px;
+}
+
+/* Process Section */
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:white;
+    padding:25px;
+    border-left:5px solid #ffb400;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+}
+
+.step-number{
+    font-size:2rem;
+    color:#ffb400;
+    font-weight:bold;
+}
+
+/* Project Showcase */
+.showcase{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.showcase img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* CTA */
+.cta{
+    background:#0b3d91;
+    color:white;
+    text-align:center;
+    padding:80px 10%;
+}
+
+.cta h2{
+    margin-bottom:15px;
+    font-size:2.5rem;
+}
+
+.cta a{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 30px;
+    background:#ffb400;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+/* Footer */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+    .hero-content h1{
+        font-size:2.3rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<header>
+    <div class="hero-content">
+        <h1>Bola Dale Energy Minerals Company</h1>
+        <p>
+            Delivering innovative energy and mineral solutions through
+            strategic planning, operational excellence, sustainable practices,
+            and advanced technology.
+        </p>
+        <a href="#solutions" class="btn">Explore Our Solutions</a>
+    </div>
+</header>
+
+<!-- SOLUTIONS SECTION -->
+<section id="solutions">
+    <div class="section-title">
+        <h2>Our Solutions</h2>
+        <p>How we solve challenges across energy and mineral operations.</p>
+    </div>
+
+    <div class="solutions">
+
+        <div class="card">
+            <img src="images mineral explotion.jpg" alt="Mineral Exploration">
+            <div class="card-content">
+                <h3>Mineral Exploration</h3>
+                <p>
+                    We identify viable mineral deposits using geological
+                    surveys, advanced mapping, and data-driven analysis.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="energy 32.avif" alt="Energy Solutions">
+            <div class="card-content">
+                <h3>Energy Development</h3>
+                <p>
+                    We design and manage energy projects that improve
+                    reliability, efficiency, and sustainability.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="environment image.jpeg" alt="Environmental Management">
+            <div class="card-content">
+                <h3>Environmental Management</h3>
+                <p>
+                    We ensure projects comply with environmental standards
+                    while minimizing ecological impact.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section style="background:white;">
+    <div class="section-title">
+        <h2>How We Manage Solutions</h2>
+        <p>Our proven project delivery framework.</p>
+    </div>
+
+    <div class="process">
+
+        <div class="step">
+            <div class="step-number">01</div>
+            <h3>Assessment</h3>
+            <p>
+                We evaluate project requirements, resources, risks,
+                and stakeholder expectations.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h3>Planning</h3>
+            <p>
+                Our team develops a comprehensive strategy with
+                timelines, budgets, and operational plans.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h3>Implementation</h3>
+            <p>
+                We deploy skilled professionals and technology
+                to execute projects efficiently.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <h3>Monitoring</h3>
+            <p>
+                Continuous monitoring ensures quality control,
+                safety compliance, and performance optimization.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECT SHOWCASE -->
+<section>
+    <div class="section-title">
+        <h2>Project Showcase</h2>
+        <p>Examples of how we deliver value to our clients.</p>
+    </div>
+
+    <div class="showcase">
+        <img src="mineral solution image.jpg" alt="Mining Operations">
+        <img src="energy image2.avif" alt="Energy Infrastructure">
+        <img src="environment analisis.jpeg" alt="Field Monitoring">
+    </div>
+</section>
+
+<!-- CLIENT BENEFITS -->
+<section style="background:#eef3f8;">
+    <div class="section-title">
+        <h2>Benefits to Our Clients</h2>
+    </div>
+
+    <div class="process">
+
+        <div class="step">
+            <h3>Operational Efficiency</h3>
+            <p>Reduced costs and improved project performance.</p>
+        </div>
+
+        <div class="step">
+            <h3>Risk Management</h3>
+            <p>Comprehensive safety and compliance strategies.</p>
+        </div>
+
+        <div class="step">
+            <h3>Sustainable Growth</h3>
+            <p>Long-term solutions that support environmental responsibility.</p>
+        </div>
+
+        <div class="step">
+            <h3>Innovation</h3>
+            <p>Use of modern technologies and data analytics.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Partner With Bola Dale Energy Minerals Company</h2>
+    <p>
+        We provide tailored solutions that drive growth,
+        efficiency, and sustainability.
+    </p>
+    <a href="index.html">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Bola Dale Energy Minerals Company. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

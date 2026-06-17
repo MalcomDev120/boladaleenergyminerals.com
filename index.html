@@ -1,0 +1,785 @@
+<html lang="en">
+
+
+
+<head>
+
+
+
+<meta charset="UTF-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>BOLA DALE ENERGY MINERALS COMPANY</title>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+:root{
+
+    --bg: rgba(255,255,255,0.08);
+
+    --panel: rgba(10, 15, 25, 0.35);
+
+    --panel-strong: rgba(10, 15, 25, 0.55);
+
+    --gold: #d4a017;
+
+    --text: #f7f9ff;
+
+    --muted: rgba(247,249,255,0.72);
+
+    --border: rgba(255,255,255,0.10);
+
+}
+
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Inter', sans-serif;
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+    color:var(--text);
+
+    background:transparent;
+
+}
+
+
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2400&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+    filter:brightness(0.8) contrast(1.05) saturate(1.1);
+
+    z-index:-3;
+
+}
+
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:radial-gradient(circle at top, rgba(0,0,0,0.35), rgba(0,0,0,0.75));
+
+    z-index:-2;
+
+}
+
+
+
+nav{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 42px;
+
+    background:rgba(10,15,25,0.25);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:999;
+
+    transition:0.3s;
+
+}
+
+
+
+nav.scrolled{
+
+    background:rgba(10,15,25,0.65);
+
+}
+
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+
+.logo img{
+
+    width:36px;
+
+    height:36px;
+
+}
+
+
+
+nav a{
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    margin:0 14px;
+
+    font-size:14px;
+
+    opacity:0.85;
+
+    transition:0.3s;
+
+}
+
+
+
+nav a:hover{
+
+    color:var(--gold);
+
+    opacity:1;
+
+}
+
+
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:0 20px;
+
+}
+
+
+
+.hero-content{
+
+    max-width:900px;
+
+    padding:40px;
+
+    border-radius:16px;
+
+    background:rgba(10,15,25,0.35);
+
+    backdrop-filter: blur(20px);
+
+    border:1px solid var(--border);
+
+}
+
+
+
+.hero h1{
+
+    font-size:3.6rem;
+
+    font-weight:700;
+
+}
+
+
+
+.hero p{
+
+    margin-top:16px;
+
+    color:var(--muted);
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:24px;
+
+    padding:13px 24px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+
+.btn-primary{
+
+    background:var(--gold);
+
+    color:#0a0f1a;
+
+}
+
+
+
+.btn-outline{
+
+    border:1px solid var(--border);
+
+    color:#fff;
+
+    margin-left:12px;
+
+}
+
+
+
+.market{
+
+    background:rgba(212,160,23,0.92);
+
+    color:#0a0f1a;
+
+    padding:10px;
+
+    font-weight:600;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+
+
+.market span{
+
+    display:inline-block;
+
+    padding-left:100%;
+
+    animation:scroll 20s linear infinite;
+
+}
+
+
+
+section{
+
+    padding:100px 20px;
+
+    max-width:1150px;
+
+    margin:auto;
+
+}
+
+
+
+h2{
+
+    font-size:2rem;
+
+    margin-bottom:22px;
+
+    border-left:4px solid var(--gold);
+
+    padding-left:14px;
+
+}
+
+
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:20px;
+
+}
+
+
+
+.card{
+
+    background:rgba(10,15,25,0.35);
+
+    padding:26px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    transition:0.35s;
+
+    backdrop-filter: blur(14px);
+
+    cursor:pointer;
+
+    text-align:center;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--gold);
+
+}
+
+
+
+.card-link{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+
+}
+
+
+
+footer{
+
+    text-align:center;
+
+    padding:35px;
+
+    background:rgba(0,0,0,0.45);
+
+    color:rgba(255,255,255,0.6);
+
+}
+
+
+
+@keyframes scroll{
+
+    0%{transform:translateX(0);}
+
+    100%{transform:translateX(-200%);}
+
+}
+
+
+
+.lang-btn{
+
+    margin-left:15px;
+
+    padding:6px 12px;
+
+    border-radius:8px;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    background:transparent;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<nav>
+
+    <div class="logo">
+
+        <img src="log star.jpg" alt="Logo">
+
+        <span data-i18n="brand">BOLA DALE ENERGY  MINERALS COMPANY</span>
+
+    </div>
+
+
+
+    <div>
+
+        <a href="#about" data-i18n="nav_about">About</a>
+
+        <a href="#services" data-i18n="nav_services">Services</a>
+
+        <a href="#esg" data-i18n="nav_esg">ESG</a>
+
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+
+
+
+        <button class="lang-btn" onclick="toggleLanguage()">FR / EN</button>
+
+    </div>
+
+</nav>
+
+
+
+<div class="hero">
+
+    <div class="hero-content">
+
+        <h1 data-i18n="hero_title">Bola Dale Energy Minerals</h1>
+
+        <p data-i18n="hero_subtitle">Premium global trading and supply chain solutions.</p>
+
+        <a href="#contact" class="btn btn-primary" data-i18n="btn_contact">Contact Us</a>
+
+        <a href="#services" class="btn btn-outline" data-i18n="btn_services">Explore Services</a>
+
+    </div>
+
+</div>
+
+
+
+<div class="market">
+
+<span>OIL $82.40 • GOLD $2340 • LNG GLOBAL TRADE • ENERGY SECURITY • ESG COMPLIANCE • MINERALS •</span>
+
+</div>
+
+
+
+<section id="services">
+
+<h2 data-i18n="services_title">Our Services</h2>
+
+
+
+<div class="grid">
+
+
+
+<a href="Oil & Gas Trading.html" class="card-link">
+
+    <div class="card" data-i18n="service1">Oil & Gas Trading</div>
+
+</a>
+
+
+
+<a href="Mineral Procurement.html" class="card-link">
+
+    <div class="card" data-i18n="service2">Mineral Procurement</div>
+
+</a>
+
+
+
+<a href="Global Logistics.html" class="card-link">
+
+    <div class="card" data-i18n="service3">Global Logistics</div>
+
+</a>
+
+
+
+<a href="Supply Chain Financing.html" class="card-link">
+
+    <div class="card">
+
+        <span data-i18n="service4">Supply Chain Financing</span>
+
+    </div>
+
+</a>
+
+
+
+</div>
+
+</section>
+
+
+
+<section id="about">
+
+<h2 data-i18n="about_title">About Us</h2>
+
+<p data-i18n="about_text">We are an international energy and minerals trading company.</p>
+
+</section>
+
+
+
+<section id="esg">
+
+<h2 data-i18n="esg_title">ESG & Compliance</h2>
+
+<p data-i18n="esg_text">We follow global environmental and governance standards.</p>
+
+</section>
+
+
+
+<section id="contact">
+
+<h2 data-i18n="contact_title">Contact</h2>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="4" placeholder="Message"></textarea>
+
+<br><br>
+
+<button data-i18n="send">Send Message</button>
+
+</section>
+
+
+
+<footer>
+
+© 2026 BOLA DALE ENERGY MINERALS COMPANY
+
+</footer>
+
+
+
+<script>
+
+
+
+const translations = {
+
+    en: {
+
+        brand: "BOLA DALE ENERGY MINERALS",
+
+        nav_about: "About",
+
+        nav_services: "Services",
+
+        nav_esg: "ESG",
+
+        nav_contact: "Contact",
+
+
+
+        hero_title: "Bola Dale Energy  Minerals",
+
+        hero_subtitle: "Premium global trading and supply chain solutions.",
+
+        btn_contact: "Contact Us",
+
+        btn_services: "Explore Services",
+
+
+
+        services_title: "Our Services",
+
+        service1: "Oil & Gas Trading",
+
+        service2: "Mineral Procurement",
+
+        service3: "Global Logistics",
+
+        service4: "Supply Chain Financing",
+
+
+
+        about_title: "About Us",
+
+        about_text: "We are an international energy and minerals trading company.",
+
+
+
+        esg_title: "ESG & Compliance",
+
+        esg_text: "We follow global environmental and governance standards.",
+
+
+
+        contact_title: "Contact",
+
+        send: "Send Message"
+
+    },
+
+
+
+    fr: {
+
+        brand: "BOLA DALE ÉNERGIE  MINÉRAUX",
+
+        nav_about: "À propos",
+
+        nav_services: "Services",
+
+        nav_esg: "ESG",
+
+        nav_contact: "Contact",
+
+
+
+        hero_title: "Bola Dale Énergie Minéraux",
+
+        hero_subtitle: "Solutions mondiales de commerce et de chaîne d’approvisionnement premium.",
+
+
+
+        btn_contact: "Nous contacter",
+
+        btn_services: "Voir les services",
+
+
+
+        services_title: "Nos services",
+
+        service1: "Commerce pétrole & gaz",
+
+        service2: "Approvisionnement minier",
+
+        service3: "Logistique mondiale",
+
+        service4: "Financement de la chaîne d’approvisionnement",
+
+
+
+        about_title: "À propos de nous",
+
+        about_text: "Nous sommes une entreprise internationale de négoce d’énergie et de minéraux.",
+
+
+
+        esg_title: "ESG & Conformité",
+
+        esg_text: "Nous respectons les normes environnementales et de gouvernance mondiales.",
+
+
+
+        contact_title: "Contact",
+
+        send: "Envoyer le message"
+
+    }
+
+};
+
+
+
+let currentLang = "en";
+
+
+
+function toggleLanguage() {
+
+    currentLang = currentLang === "en" ? "fr" : "en";
+
+
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+
+        const key = el.getAttribute("data-i18n");
+
+        if (translations[currentLang][key]) {
+
+            el.innerText = translations[currentLang][key];
+
+        }
+
+    });
+
+}
+
+
+
+// FIX: navbar scroll effect
+
+window.addEventListener("scroll", () => {
+
+    document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 50);
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

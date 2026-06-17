@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bola Dale Energy Minerals</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #0b1f3a;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: #142b4d;
+    padding: 12px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f4c542;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+button {
+    background: #0b1f3a;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f4c542;
+    color: black;
+}
+
+footer {
+    background: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.highlight {
+    color: #f4c542;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>Bola Dale Energy Minerals Real Solutions for Energy and Mining Services</h1>
+    <p>Energy • Mining • Oil & Gas • Renewable Financing Solutions</p>
+</header>
+
+<!-- NAV -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <div class="card">
+        <h2>Welcome to <span class="highlight">Bola Da Energy Minerals</span></h2>
+        <p>
+            We are a global financing company specializing in energy infrastructure, mineral development,
+            and large-scale industrial investment projects.
+        </p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Energy Projects</h3>
+            <p>Power generation and infrastructure financing.</p>
+        </div>
+        <div class="card">
+            <h3>Mining Investment</h3>
+            <p>Exploration, extraction, and logistics funding.</p>
+        </div>
+        <div class="card">
+            <h3>Renewables</h3>
+            <p>Solar, wind, and hydroelectric development.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="card">
+        <h2>About Us</h2>
+        <p>
+            We are a specialist provider of financing and advisory services to the energy and minerals sectors, supporting clients across the full project lifecycle. 
+            Our mandate is to facilitate responsible resource development and energy infrastructure investment that aligns with long-term sustainability and market fundamentals. 
+            Leveraging sector expertise and global reach, we deliver structured financial solutions that support capital formation, risk management, and sustainable value creation.
+        </p>
+    </div>
+</section>
+
+<!-- SECTORS -->
+<section id="sectors">
+    <h2>Financing Sectors</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="oil & gas .jpeg" alt="Oil and Gas">
+            <h3>Oil & Gas</h3>
+            <p>Funding upstream and downstream petroleum projects worldwide.</p>
+        </div>
+
+        <div class="card">
+            <img src="mining.jpg" alt="Mining">
+            <h3>Mining</h3>
+            <p>We support mineral exploration and extraction projects.</p>
+        </div>
+
+        <div class="card">
+            <img src="renewable energy.jpg" alt="Renewable Energy">
+            <h3>Renewable Energy</h3>
+            <p>Clean energy solutions for a sustainable future.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+    <div class="card">
+        <h2>Trusted Clients & Partners</h2>
+        <p>
+            We work with international energy investors, engineering firms, mining operators,
+            and institutional financial partners across global markets.
+        </p>
+    </div>
+
+    <div class="grid">
+        <div class="card">Global Energy Investors</div>
+        <div class="card">Mining Corporations</div>
+        <div class="card">Infrastructure Developers</div>
+        <div class="card">Private Investment Groups</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="card">
+        <h2>Contact Us</h2>
+        <p>Email: info@boladale-energy.com</p>
+        <p>Phone: +33-753-832-799</p>
+        <p>Location: France/Gonfreville l'orcher  .Headquarters</p>
+    </div>
+
+    <div class="card">
+        <h3>Send a Message</h3>
+
+        <input type="text" id="name" placeholder="Your Name" style="width:100%;padding:10px;margin:5px 0;">
+        <input type="email" id="email" placeholder="Your Email" style="width:100%;padding:10px;margin:5px 0;">
+        <textarea id="message" placeholder="Your Message" style="width:100%;padding:10px;margin:5px 0;"></textarea>
+
+        <button onclick="sendMessage()">Send</button>
+
+        <p id="status"></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Bola Dale Energy Minerals Company — All Rights Reserved
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function sendMessage() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    if(name === "" || email === "" || message === "") {
+        document.getElementById("status").innerText = "Please fill all fields.";
+        document.getElementById("status").style.color = "red";
+        return;
+    }
+
+    document.getElementById("status").innerText = "Message sent successfully!";
+    document.getElementById("status").style.color = "green";
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
+
+</body>
+</html>
